@@ -5,7 +5,7 @@ A reusable GitHub Action to deploy files to a Hostinger server via SSH and rsync
 ## Usage
 
 ```yaml
-- uses: pedromneto97/hostinger-deploy@v1
+- uses: pedromneto97/hostinger-deploy@v1.0.0
   with:
     ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
     ssh-host: ${{ secrets.SSH_HOST }}
@@ -53,12 +53,12 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - name: Build
         run: npm ci && npm run build
 
-      - uses: pedromneto97/hostinger-deploy@v1
+      - uses: pedromneto97/hostinger-deploy@v1.0.0
         with:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
           ssh-host: ${{ secrets.SSH_HOST }}
